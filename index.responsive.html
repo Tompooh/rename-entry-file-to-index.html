@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Beauty Echo — AI Platform for Beauty Brands</title>
-  <meta name="description" content="AI powered platform that helps beauty brands understanding the consumers better.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="AI powered platform that helps beauty brands understand consumers better.">
+  <link rel="stylesheet" href="style.responsive.css">
 </head>
 <body>
 
-  <nav class="topnav">
+  <nav class="topnav" aria-label="Primary">
     <div class="wrap">
       <div class="logo">Beauty Echo</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="#hero">Home</a>
         <a href="#how">How It Works</a>
@@ -34,7 +35,7 @@
 
         <h1 class="brand-title">Beauty Echo</h1>
         <p class="brand-sub">
-          AI powered platform that helps beauty brands understanding the consumers better
+          AI powered platform that helps beauty brands understand the consumer better
         </p>
         <div class="ctas">
           <a href="#final" class="btn primary">Join Pilot</a>
@@ -42,14 +43,12 @@
         </div>
       </div>
 
-      <div class="hero-image-overlay"></div>
-    </section>  <!-- ✅ THIS must exist -->
+      <div class="hero-image-overlay" aria-hidden="true"></div>
+    </section>
 
     <!-- 2) HOW IT WORKS -->
     <section id="how" class="snap-section how">
       <div class="wrap">
-
-        <!-- Page title + kicker -->
         <h1 class="section-title">How It Works</h1>
         <p class="section-kicker muted">Engage · Analyze · Recommend</p>
 
@@ -72,7 +71,6 @@
             <p class="desc">Turn insights into testable actions, creative ideas, and faster product iterations — instantly.</p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -112,14 +110,12 @@
         </header>
 
         <div class="brand-stage">
-          <!-- Left rail captions -->
           <div class="left-rail">
             <div class="callout"><strong>Dashboard</strong>,<br>summarized by our AI’s NLP, provides brands with actionable insights</div>
             <div class="callout"><strong>Consumer statistics</strong>,<br>help understand their backgrounds</div>
             <div class="callout"><strong>Deep analysis</strong>,<br>leads to better solutions &amp; faster iterations</div>
           </div>
 
-          <!-- Laptop mock -->
           <figure class="device laptop">
             <img src="assets/macbook-mock.png" alt="Brand dashboard">
           </figure>
@@ -140,12 +136,12 @@
         </div>
         <div class="final-block">
           <h2>Team</h2>
-          <p><strong>Delong Wang, Ph.D.</strong> — Founder & CEO</p>
+          <p><strong>Delong Wang, Ph.D.</strong> — Founder &amp; CEO</p>
           <p class="muted">Seeking CTO co-founder (NLP/Data Engineering).</p>
         </div>
         <div class="final-block">
           <h2>Contact</h2>
-          <p>Email: <a href="mailto:ohtokuryu1988@icloud.com">ohtokuryu1988@icloud.com</a></p>
+          <p>Email: <a href="mailto:delongw@beauty-echo.com">delongw@beauty-echo.com</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/delong-wang-ph-d-02a936133" target="_blank" rel="noopener">www.linkedin.com/in/delong-wang-ph-d-02a936133</a></p>
           <p class="status muted">MVP launched · Recruiting CTO co-founder · Accepting pilot brands</p>
         </div>
@@ -156,5 +152,17 @@
     </section>
 
   </main>
+
+  <script>
+    // Small, safe enhancement: collapse nav links behind a toggle under 860px
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
 </body>
 </html>
